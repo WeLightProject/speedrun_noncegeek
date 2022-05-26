@@ -1,4 +1,4 @@
-# 🏃‍♀️ Speed Run Ethereum [![Netlify Status](https://api.netlify.com/api/v1/badges/f925ecf3-0b4b-4545-8412-7b860c76b7f1/deploy-status)](https://app.netlify.com/sites/wonderful-kirch-4ab41a/deploys)
+# 🏃‍♀️ SpeedRun NonceGeek [![Netlify Status](https://api.netlify.com/api/v1/badges/f925ecf3-0b4b-4545-8412-7b860c76b7f1/deploy-status)](https://app.netlify.com/sites/wonderful-kirch-4ab41a/deploys)
 
 
 Speed Run Ethereum aims to provide a structured learning path for onboarding developers to Ethereum.
