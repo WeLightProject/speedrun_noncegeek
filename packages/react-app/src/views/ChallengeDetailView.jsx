@@ -116,8 +116,8 @@ export default function ChallengeDetailView({ serverUrl, address, userProvider, 
       </Box>
       <Tabs variant="enclosed-colored" align="center">
         <TabList>
-          <Tab>Javascript</Tab>
-          <Tab>Typescript</Tab>
+          <Tab>English</Tab>
+          <Tab>Chinese</Tab>
         </TabList>
         <TabPanels align="left">
           <TabPanel>

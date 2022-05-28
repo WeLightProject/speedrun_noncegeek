@@ -1,10 +1,10 @@
 import React, { useMemo } from "react";
 import { Container, Box, Text } from "@chakra-ui/react";
 import ChallengeExpandedCard from "../components/ChallengeExpandedCard";
-import { challengeInfo } from "../data/challenges";
+import { challengeInfoStarcoin } from "../data/challenges";
 import useCustomColorModes from "../hooks/useCustomColorModes";
 
-export default function HomeView({ connectedBuilder }) {
+export default function HomeViewStarcoin({ connectedBuilder }) {
   const { primaryFontColor } = useCustomColorModes();
 
   const builderAttemptedChallenges = useMemo(() => {
@@ -24,7 +24,7 @@ export default function HomeView({ connectedBuilder }) {
           <span role="img" aria-label="teacher icon">
             👩‍🏫
           </span>{" "}
-          Learn how to build on Ethereum; the superpowers and the gotchas.
+          Learn how to build on Starcoin; the superpowers and the gotchas.
         </Text>
 
         <Text color={primaryFontColor} mb="6" fontSize="xl" textAlign="center">
@@ -117,7 +117,7 @@ export default function HomeView({ connectedBuilder }) {
       </div>
 
       <Box>
-        {Object.entries(challengeInfo).map(([challengeId, challenge], index) => (
+        {Object.entries(challengeInfoStarcoin).map(([challengeId, challenge], index) => (
           <ChallengeExpandedCard
             challengeId={challengeId}
             challenge={challenge}

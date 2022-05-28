@@ -15,6 +15,7 @@ import {
   BuilderProfileView,
   SubmissionReviewView,
   HomeView,
+  HomeViewStarcoin,
   ActivityView,
 } from "./views";
 import { USER_ROLES } from "./helpers/constants";
@@ -172,6 +173,12 @@ function App() {
         />
         <Switch>
           <Route exact path="/">
+            <HomeView connectedBuilder={connectedBuilder} />
+          </Route>
+          <Route exact path="/starcoin">
+            <HomeViewStarcoin connectedBuilder={connectedBuilder} />
+          </Route>
+          <Route exact path="/storage">
             <HomeView connectedBuilder={connectedBuilder} />
           </Route>
           <Route exact path="/portfolio">

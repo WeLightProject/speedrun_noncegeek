@@ -46,7 +46,7 @@ export default function Header({
             <span role="img" aria-label="castle icon">
               🏃‍♀️
             </span>{" "}
-            <chakra.strong display={{ base: "none", md: "inline-block" }}>SpeedRunEthereum.com</chakra.strong>
+            <chakra.strong display={{ base: "none", md: "inline-block" }}>SpeedRunNonceGeek.com</chakra.strong>
             <chakra.strong display={{ base: "inline-block", md: "none" }}>
               {isSignerProviderConnected ? "SRE" : "SpeedRunEthereum.com"}
             </chakra.strong>
@@ -62,6 +62,32 @@ export default function Header({
           top="80px"
           left={0}
         >
+          {userRole && USER_ROLES.anonymous !== userRole && (
+            <chakra.li key="/starcoin" color={secondaryFontColor} _hover={{ color: primaryColorString }}>
+              <NavLink
+                to="/starcoin"
+                isActive={(match, location) => location.pathname.includes("/builders/")}
+                activeStyle={{
+                  color: primaryColorString,
+                }}
+              >
+                Challenge: Starcoin
+              </NavLink>
+            </chakra.li>
+          )}
+          {userRole && USER_ROLES.anonymous !== userRole && (
+            <chakra.li key="/storage" color={secondaryFontColor} _hover={{ color: primaryColorString }}>
+              <NavLink
+                to="/storage"
+                isActive={(match, location) => location.pathname.includes("/builders/")}
+                activeStyle={{
+                  color: primaryColorString,
+                }}
+              >
+                Challenge: Storage
+              </NavLink>
+            </chakra.li>
+          )}
           {userRole && USER_ROLES.anonymous !== userRole && (
             <chakra.li key="/portfolio" color={secondaryFontColor} _hover={{ color: primaryColorString }}>
               <NavLink
