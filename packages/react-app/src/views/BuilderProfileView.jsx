@@ -205,7 +205,7 @@ export default function BuilderProfileView({ serverUrl, mainnetProvider, address
                               </Link>
                             </Td>
                             <Td>
-                              <Link
+                              {challengeInfo[challengeId].submitItems.includes("contractUrl") ? (<Link
                                 // Legacy branchUrl
                                 href={lastSubmission.contractUrl || lastSubmission.branchUrl}
                                 color="teal.500"
@@ -213,17 +213,17 @@ export default function BuilderProfileView({ serverUrl, mainnetProvider, address
                                 rel="noopener noreferrer"
                               >
                                 Code
-                              </Link>
+                              </Link>) : (<div>--</div>)}
                             </Td>
                             <Td>
-                              <Link
+                            {challengeInfo[challengeId].submitItems.includes("deployedUrl") ? (<Link
                                 href={lastSubmission.deployedUrl}
                                 color="teal.500"
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
                                 Demo
-                              </Link>
+                              </Link>):(<div>--</div>)}
                             </Td>
                             <Td>
                               {isLoadingTimestamps ? (

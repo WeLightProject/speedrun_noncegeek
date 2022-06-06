@@ -29,6 +29,7 @@ export const challengeInfo = {
       "🎫 Create your first Move Contract and deploy it on Starcoin Testnet!🚀",
     previewImage: "assets/0.png",
     dependencies: [],
+    submitItems: ["deployedUrl", "contractUrl"],
   },
 };
 
@@ -42,6 +43,7 @@ export const challengeInfoStarcoin = {
       "🎫 Create your first Move Contract and deploy it on Starcoin Testnet!🚀",
     previewImage: "assets/0.png",
     dependencies: [],
+    submitItems: ["deployedUrl", "contractUrl"],
   },
 };
 
