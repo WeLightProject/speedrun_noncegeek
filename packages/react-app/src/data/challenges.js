@@ -8,6 +8,7 @@ export const challengeInfo = {
       "Deploy your first smart contract on Any Ethereum Testnet",
     previewImage: "assets/0.png",
     dependencies: [],
+    submitItems: ["contractUrl"],
   },
   "variable-types": {
     id: 10102,
@@ -17,7 +18,7 @@ export const challengeInfo = {
     description:
       "🎫 Learn the variable in Solidity!",
     previewImage: "assets/0.png",
-    dependencies: [],
+    submitItems: ["contractUrl"],
   },
   
   "move-contract-example": {
