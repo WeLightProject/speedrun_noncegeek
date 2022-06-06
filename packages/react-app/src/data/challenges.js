@@ -1,11 +1,32 @@
 export const challengeInfo = {
-  "simple-nft-example": {
-    id: 0,
-    branchName: "ethereum/challenge-0-simple-nft",
-    label: "🚩 Challenge 0: 🎟 Simple NFT Example",
+  "deploy-smart-contract": {
+    id: 10101,
+    branchName: "ethereum/01-01-deploy-smart-contract",
+    label: "🚩 Challenge 01-01: Deploy Smart Contract",
     disabled: false,
     description:
-      "🎫 Create a simple NFT to learn basics of 🏗 scaffold-eth. You'll use 👷‍♀️ HardHat to compile and deploy smart contracts. Then, you'll use a template React app full of important Ethereum components and hooks. Finally, you'll deploy an NFT to a public network to share with friends! 🚀",
+      "Deploy your first smart contract on Any Ethereum Testnet",
+    previewImage: "assets/0.png",
+    dependencies: [],
+  },
+  "variable-types": {
+    id: 10102,
+    branchName: "ethereum/01-02-variable-type",
+    label: "🚩 Challenge 01-02: 🎟 Solidity Basic: Variable Type",
+    disabled: false,
+    description:
+      "🎫 Learn the variable in Solidity!",
+    previewImage: "assets/0.png",
+    dependencies: [],
+  },
+  
+  "move-contract-example": {
+    id: 20001,
+    branchName: "starcoin/challenge-0-move-contract",
+    label: "🚩 Challenge 0: 🎟 Try an Move Contract",
+    disabled: false,
+    description:
+      "🎫 Create your first Move Contract and deploy it on Starcoin Testnet!🚀",
     previewImage: "assets/0.png",
     dependencies: [],
   },
@@ -13,7 +34,7 @@ export const challengeInfo = {
 
 export const challengeInfoStarcoin = {
   "move-contract-example": {
-    id: 0,
+    id: 20001,
     branchName: "starcoin/challenge-0-move-contract",
     label: "🚩 Challenge 0: 🎟 Try an Move Contract",
     disabled: false,
@@ -27,8 +48,8 @@ export const challengeInfoStarcoin = {
 
 
 const githubChallengesRepoBaseRawUrl = {
-  js: "https://raw.githubusercontent.com/WeLightProject/speedrun_challenges",
-  ts: "https://raw.githubusercontent.com/scaffold-eth/scaffold-eth-typescript-challenges",
+  js: "https://raw.githubusercontent.com/WeLightProject/web3challenges_contents",
+  ts: "https://raw.githubusercontent.com/WeLightProject/web3challenges_contents",
 };
 
 export const getGithubChallengeReadmeUrl = (challengeId, version) =>

@@ -18,4 +18,3 @@
 
 * Staking
 * Token Vendor  
-
