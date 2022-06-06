@@ -18,27 +18,32 @@ export default function ChallengeSubmission({ challenge, serverUrl, address, use
   const [hasErrorField, setHasErrorField] = useState({ deployedUrl: false, contractUrl: false });
 
   const onFinish = async () => {
-    if (!deployedUrl || !contractUrl) {
-      toast({
-        status: "error",
-        description: "Both fields are required",
-      });
-      return;
-    }
 
-    if (!isValidUrl(deployedUrl) || !isValidUrl(contractUrl)) {
-      toast({
-        status: "error",
-        title: "Please provide a valid URL",
-        description: "Valid URLs start with http:// or https://",
-      });
+    for (const field of challenge.submitItems) {
+      if (field === "deployedUrl" && !deployedUrl) {
+        toast({
+          status: "error",
+          description: "Deployed URL field is required",
+        });
+        return;
+      } else if (field === "contractUrl" && !contractUrl) {
+        toast({
+          status: "error",
+          description: "Contract URL field is required",
+        });
+        return;
+      }
 
-      setHasErrorField({
-        deployedUrl: !isValidUrl(deployedUrl),
-        contractUrl: !isValidUrl(contractUrl),
-      });
+      if (!isValidUrl(field === 'deployedUrl' ? deployedUrl: contractUrl)) {
+        toast({
+          status: "error",
+          title: "Please provide a valid URL",
+          description: "Valid URLs start with http:// or https://",
+        });
 
-      return;
+        setHasErrorField({ ...hasErrorField, [field]: false });
+        return;
+      }
     }
 
     setIsSubmitting(true);
@@ -129,7 +134,8 @@ export default function ChallengeSubmission({ challenge, serverUrl, address, use
         </Text>
       ) : (
         <form name="basic" autoComplete="off">
-          <FormControl id="deployedUrl" isRequired>
+          {challenge.submitItems.includes("deployedUrl") &&
+          (<FormControl id="deployedUrl" isRequired>
             <FormLabel>
               Deployed URL{" "}
               <Tooltip label="Your deployed challenge URL on surge / s3 / ipfs ">
@@ -152,9 +158,10 @@ export default function ChallengeSubmission({ challenge, serverUrl, address, use
               }}
               borderColor={hasErrorField.deployedUrl && "red.500"}
             />
-          </FormControl>
+          </FormControl>)}
 
-          <FormControl id="contractUrl" isRequired mt={4}>
+          {challenge.submitItems.includes("contractUrl") &&
+          (<FormControl id="contractUrl" isRequired mt={4}>
             <FormLabel>
               Etherscan Contract URL{" "}
               <Tooltip label="Your verified contract URL on Etherscan">
@@ -177,7 +184,7 @@ export default function ChallengeSubmission({ challenge, serverUrl, address, use
               }}
               borderColor={hasErrorField.contractUrl && "red.500"}
             />
-          </FormControl>
+          </FormControl>)}
 
           <div className="form-item">
             <Button colorScheme="blue" onClick={onFinish} isLoading={isSubmitting} mt={4} isFullWidth>
