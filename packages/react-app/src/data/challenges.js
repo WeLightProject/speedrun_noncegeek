@@ -8,6 +8,7 @@ export const challengeInfo = {
       "🎫 Create a simple NFT to learn basics of 🏗 scaffold-eth. You'll use 👷‍♀️ HardHat to compile and deploy smart contracts. Then, you'll use a template React app full of important Ethereum components and hooks. Finally, you'll deploy an NFT to a public network to share with friends! 🚀",
     previewImage: "assets/0.png",
     dependencies: [],
+    submitItems: ["deployedUrl", "contractUrl"],
   },
 };
 
@@ -21,6 +22,7 @@ export const challengeInfoStarcoin = {
       "🎫 Create your first Move Contract and deploy it on Starcoin Testnet!🚀",
     previewImage: "assets/0.png",
     dependencies: [],
+    submitItems: ["deployedUrl", "contractUrl"],
   },
 };
 
