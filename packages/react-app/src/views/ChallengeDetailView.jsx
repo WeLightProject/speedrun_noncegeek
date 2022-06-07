@@ -46,7 +46,7 @@ export default function ChallengeDetailView({ serverUrl, address, userProvider, 
   // In the future, this might be a fetch to the repos/branchs README
   // (Ideally fetched at build time)
   useEffect(() => {
-    getChallengeReadme(challengeId, "js")
+    getChallengeReadme(challengeId, "js", challengeType)
       .then(text => setDescriptionJs(parseGithubReadme(text)))
       .catch(() => setDescriptionJs(challenge.description));
 
