@@ -19,7 +19,7 @@ import { QuestionOutlineIcon } from "@chakra-ui/icons";
 import useCustomColorModes from "../hooks/useCustomColorModes";
 import { CHALLENGE_SUBMISSION_STATUS } from "../helpers/constants";
 
-const ChallengeExpandedCard = ({ challengeId, challenge, builderAttemptedChallenges }) => {
+const ChallengeExpandedCard = ({ challengeId, challenge, builderAttemptedChallenges, challengeType }) => {
   const { borderColor, secondaryFontColor } = useCustomColorModes();
 
   const builderHasCompletedDependenciesChallenges = challenge.dependencies?.every(id => {
@@ -129,7 +129,7 @@ const ChallengeExpandedCard = ({ challengeId, challenge, builderAttemptedChallen
           <ButtonGroup>
             <Button
               as={RouteLink}
-              to={!isChallengeLocked && `/challenge/${challengeId}`}
+              to={!isChallengeLocked && `/challenge/${challengeType}/${challengeId}`}
               isDisabled={isChallengeLocked}
               variant={isChallengeLocked ? "outline" : "solid"}
               isFullWidth

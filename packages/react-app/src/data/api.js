@@ -195,9 +195,9 @@ export const getDraftBuilds = async address => {
   }
 };
 
-export const getChallengeReadme = async (challengeId, version) => {
+export const getChallengeReadme = async (challengeId, version, type="home") => {
   try {
-    const response = await axios.get(getGithubChallengeReadmeUrl(challengeId, version));
+    const response = await axios.get(getGithubChallengeReadmeUrl(challengeId, version, type));
     return response.data;
   } catch (err) {
     console.log("error fetching challenge README", err);

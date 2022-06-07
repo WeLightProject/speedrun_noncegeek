@@ -123,6 +123,7 @@ export default function HomeView({ connectedBuilder }) {
             challenge={challenge}
             challengeIndex={index}
             builderAttemptedChallenges={builderAttemptedChallenges}
+            challengeType = "home"
           />
         ))}
       </Box>
