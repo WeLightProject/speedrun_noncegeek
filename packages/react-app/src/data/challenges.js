@@ -21,18 +21,6 @@ export const challengeInfo = {
     dependencies: [],
     submitItems: ["contractUrl"],
   },
-  
-  "move-contract-example": {
-    id: 20001,
-    branchName: "starcoin/challenge-0-move-contract",
-    label: "🚩 Challenge 0: 🎟 Try an Move Contract",
-    disabled: false,
-    description:
-      "🎫 Create your first Move Contract and deploy it on Starcoin Testnet!🚀",
-    previewImage: "assets/0.png",
-    dependencies: [],
-    submitItems: ["deployedUrl", "contractUrl"],
-  },
 };
 
 export const challengeInfoStarcoin = {
@@ -56,5 +44,15 @@ const githubChallengesRepoBaseRawUrl = {
   ts: "https://raw.githubusercontent.com/WeLightProject/web3challenges_contents",
 };
 
-export const getGithubChallengeReadmeUrl = (challengeId, version) =>
-  `${githubChallengesRepoBaseRawUrl[version]}/${challengeInfo[challengeId].branchName}/README.md`;
+export const getGithubChallengeReadmeUrl = (challengeId, version, type) => {
+  let info = getChallengeInfo(type)
+  return `${githubChallengesRepoBaseRawUrl[version]}/${info[challengeId].branchName}/README.md`
+}
+
+export const getChallengeInfo = (type) => {
+  let info = challengeInfo
+  if (type == "starcoin") {
+    info = challengeInfoStarcoin
+  }
+  return info
+}

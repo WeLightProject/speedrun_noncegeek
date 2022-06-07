@@ -196,7 +196,7 @@ function App() {
               userProvider={userProvider}
             />
           </Route>
-          <Route path="/challenge/:challengeId">
+          <Route path="/challenge/:challengeType/:challengeId">
             <ChallengeDetailView
               serverUrl={serverUrl}
               address={address}

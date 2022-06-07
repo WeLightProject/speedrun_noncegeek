@@ -23,7 +23,7 @@ import {
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import ReactMarkdown from "react-markdown";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
-import { challengeInfo } from "../data/challenges";
+import { challengeInfo, getChallengeInfo } from "../data/challenges";
 import ChallengeSubmission from "../components/ChallengeSubmission";
 import { chakraMarkdownComponents } from "../helpers/chakraMarkdownTheme";
 import { USER_ROLES, JS_CHALLENGE_REPO, TS_CHALLENGE_REPO } from "../helpers/constants";
@@ -33,12 +33,12 @@ import { parseGithubReadme } from "../helpers/strings";
 export default function ChallengeDetailView({ serverUrl, address, userProvider, userRole, loadWeb3Modal }) {
   const [descriptionJs, setDescriptionJs] = useState(null);
   const [descriptionTs, setDescriptionTs] = useState(null);
-  const { challengeId } = useParams();
+  const { challengeType, challengeId } = useParams();
   const history = useHistory();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [openModalOnLoad, setOpenModalOnLoad] = useState(false);
 
-  const challenge = challengeInfo[challengeId];
+  const challenge = getChallengeInfo(challengeType)[challengeId];
   const isWalletConnected = !!userRole;
   const isAnonymous = userRole && USER_ROLES.anonymous === userRole;
 

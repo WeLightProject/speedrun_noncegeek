@@ -123,6 +123,7 @@ export default function HomeViewStarcoin({ connectedBuilder }) {
             challenge={challenge}
             challengeIndex={index}
             builderAttemptedChallenges={builderAttemptedChallenges}
+            challengeType = "starcoin"
           />
         ))}
       </Box>
