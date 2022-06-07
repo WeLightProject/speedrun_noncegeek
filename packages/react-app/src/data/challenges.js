@@ -18,6 +18,7 @@ export const challengeInfo = {
     description:
       "🎫 Learn the variable in Solidity!",
     previewImage: "assets/0.png",
+    dependencies: [],
     submitItems: ["contractUrl"],
   },
   

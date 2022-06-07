@@ -45,7 +45,7 @@ const ChallengeExpandedCard = ({ challengeId, challenge, builderAttemptedChallen
     );
   });
 
-  const lockReasonToolTip = "The following challenges are not completed: " + pendingDependenciesChallenges.join(", ");
+  const lockReasonToolTip = "The following challenges are not completed: " + pendingDependenciesChallenges?.join(", ");
 
   const isRampUpChallenge = challenge.dependencies?.length === 0;
   const challengeStatus = builderAttemptedChallenges[challengeId]?.status;
